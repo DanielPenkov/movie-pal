@@ -26,7 +26,7 @@ class Movie extends Entity
      protected function _getFullTitle()
     {
         return $this->_properties['title'] . '  ' .
-            'KUR';
+            'KURE';
     }
 
 }

@@ -1,0 +1,20 @@
+ <project name="MoviePal" default="build">
+
+    <property name="toolsdir" value=""/>
+    <target name="build" depends="lint" description=""/>
+    <target name="build-parallel" depends="lint" description=""/>
+   
+    
+    <target name="lint" description="Perform syntax check of sourcecode files">
+        <apply executable="php" failonerror="true">
+            <arg value="-l"/>
+            <fileset dir="${basedir}/src">
+                <include name="**/*.php"/>
+                <modified/>
+            </fileset>
+        </apply>
+    </target>
+    
+
+    
+</project>

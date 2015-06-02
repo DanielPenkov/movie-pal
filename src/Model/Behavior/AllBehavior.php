@@ -11,7 +11,7 @@ class AllBehavior extends Behavior
 {
 
     /**
-     * Default configuration.
+     * Default cwwwonfiguration.
      *
      * @var array
      */

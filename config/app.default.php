@@ -122,7 +122,7 @@ return [
      * In CLI environments exceptions will be printed to stderr with a backtrace.
      * In web environments an HTML page will be displayed for the exception.
      * With debug true, framework errors like Missing Controller will be displayed.
-     * When debug is false, framework errors will be coerced into generic HTTP errors.
+     * When debug is false, frameworeeeeeek errors will be coerced into generic HTTP errors.
      *
      * Options:
      *

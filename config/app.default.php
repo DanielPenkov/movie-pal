@@ -133,7 +133,7 @@ return [
      * - `exceptionRenderer` - string - The class responsible for rendering
      *   uncaught exceptions.  If you choose a custom class you should place
      *   the file for that class in src/Error. This class needs to implement a
-     *   render method.
+     *   render method.ee
      * - `skipLog` - array - List of exceptions to skip for logging. Exceptions that
      *   extend one of the listed exceptions will also be skipped for logging.
      *   E.g.:

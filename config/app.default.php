@@ -221,7 +221,7 @@ return [
             //'port' => 'nonstandard_port_number',
             'username' => 'dako',
             'password' => 'hipodil85',
-            'database' => 'my_app',
+            'database' => 'movies',
             'encoding' => 'utf8',
             'timezone' => 'UTC',
             'cacheMetadata' => true,

@@ -134,4 +134,29 @@ class UsersController extends AppController
         }
         return $this->redirect(['action' => 'index']);
     }
+
+    public function getFriends($user_id = null)
+    {
+
+        
+        if ($this->request->is('ajax')) 
+        {
+            $config = array('limit' => 9);
+
+            $result =$this->Users->find('friends', ['user_id' => $user_id]);
+
+            $this->set('users', $result);
+
+            $peopleMayKnow =$this->Users->find('peopleMayKnow', ['user_id' => $user_id]);
+             
+            $this->set('peopleMayKnow', $peopleMayKnow);
+           
+         
+            
+        }else{
+            $this->autoRender = false;
+        }
+    }
+
+
 }

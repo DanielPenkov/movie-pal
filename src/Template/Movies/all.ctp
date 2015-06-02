@@ -1,9 +1,8 @@
 <div style="margin-bottom: 50px">
-
   <?php
-    echo $this->Form->create('Movies', ['type' => 'get','url' => '/movies/index', 'class'=>'search-form']); 
-    echo $this->Form->input('title', array( 'value' =>$title, 'placeholder' => 'Title','label' => '','div'=>array('class'=>'col-md-6 col-sm-4'), 'class' => 'search-input-title '));
-    echo $this->Form->input('genre' ,array( 'value'=>$genre, 'div'=>array('class'=>'col-md-2 col-sm-4'),'label' => '', 'empty' => 'All', 'class'=>'search-input-genre '));
+    echo $this->Form->create('Movies', [ 'url' => ['controller' => 'Movies', 'action' => 'index'], 'class'=>'search-form']); 
+    echo $this->Form->input('Title', array('placeholder' => 'Title','label' => '','div'=>array('class'=>'col-md-6 col-sm-4'), 'class' => 'search-input-title '));
+    echo $this->Form->input('dropdownitem' ,array('div'=>array('class'=>'col-md-2 col-sm-4'),'label' => '', 'empty' => 'All', 'class'=>'search-input-genre '));
     echo $this->Form->submit('Search', array('div'=>array('class'=>' col-md-1 col-sm-4 '), 'class'=>'search-button btn btn-success'));
     echo $this->Form->end();
   ?>
@@ -44,9 +43,7 @@
 
       <a onclick="addToWatchedList(<?php echo $movie->id ?>)" "href="javascript:void(0);" class="btn btn-default" >Watched</a>
 
-      <a onclick="addToWatchingList(<?php echo $movie->id; ?>)" "href="javascript:void(0);" class="btn btn-default" >To Watch</a>
-
-      <button type="button" onclick="view(<?php echo $movie->id; ?>)" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">View</button>
+          <a onclick="addToWatchingList(<?php echo $movie->id; ?>)" "href="javascript:void(0);" class="btn btn-default" >To Watch</a>
 
 
           </p>
@@ -62,28 +59,33 @@
     <?php endforeach; ?>
 
 
-    </div>
 
-    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-    </div>
- 
-  </div>
-</div>
 
-   <div class="paginator">
+
+    <div class="paginator">
         <ul class="pagination">
             <?= $this->Paginator->prev('< ' . __('previous')) ?>
             <?= $this->Paginator->numbers() ?>
             <?= $this->Paginator->next(__('next') . ' >') ?>
         </ul>
+        <p><?= $this->Paginator->counter() ?></p>
     </div>
+
+
+
+
+
+
+    </div>
+
+
    
 
 
 <script>
-  $(document).ready(function(){  
-    $("#title").autocomplete("/movie-pal/movies/index.json", { minChars: 3});
-  });
+$(document).ready(function(){  
+$("#title").autocomplete("/movie-pal/movies/index.json", {
+minChars: 3
+});
+});
 </script>

@@ -265,10 +265,11 @@ dd {
 
 /** Forms **/
 form {
-	clear: both;
-	margin-right: 20px;
-	padding: 0;
-	width: 95%;
+  clear: both;
+  margin-right: 20px;
+  padding: 0;
+  width: 60%;
+  margin: auto;
 }
 fieldset {
 	border: none;
@@ -996,25 +997,54 @@ color: #333;
 	clear: none;
   margin: 0px;
   padding: 0px;
+    width: 30%;
+  display: inline-block;
+  margin-top: 10px;
 
 }
 
 
 .search-input-genre{
 	width: 99%;
-	  height: 35px;
+	  height: 40px;
 
 
 }
 .search-input-title{
 	width: 99%;
+	height: 40px;
 }
 
 .search-button{
-	 height: 35px;
+	 height: 40px;
 
 }
 .search-div{
 
 	margin: 20px;
+}
+.content-movie{
+
+	background-color: white;
+	  overflow: auto;
+}
+
+.title-big{
+
+    text-align: center;
+  font-size: 40px;
+  color: slateblue;
+  font-family: -webkit-pictograph;
+  font-weight: bolder;
+}
+
+.list-img{
+
+	width:120px;
+	margin-bottom: 20px;
+}
+
+.movie-item-list{
+
+	height: 200px;
 }

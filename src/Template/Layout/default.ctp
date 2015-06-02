@@ -19,14 +19,13 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 <html>
 <head>
     <?= $this->Html->charset() ?>
-    <meta name="viewport" content="width=device-width, initial-scale=1.5">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
         <?= $cakeDescription ?>:
         <?= $this->fetch('title') ?>
     </title>
     <?= $this->Html->meta('icon') ?>
 
-    <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('cake.css') ?>
     <?= $this->Html->css('bootstrap') ?>
     <?= $this->Html->css('bootstrap-theme') ?>
@@ -68,8 +67,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                       <ul class="nav navbar-nav">
                         <li ><?php echo $this->Html->link('Movies', array('controller' => 'movies','action' => 'index'));?></li>
 
-                        <?php if ($authUser!==false):?>
-                            <li><?php echo $this->Html->link('My Profile', array('controller' => 'users','action' => 'index'));?></li>
+                        <?php if (isset($authUser)):?>
+                            <li><?php echo $this->Html->link('My Profile', array('controller' => 'profile','action' => 'index'));?></li>
                             <li><?php echo $this->Html->link('All Users', array('controller' => 'users','action' => 'allusers'));?></li>
                             <li><?php echo $this->Html->link('Friends', array('controller' => 'users','action' => 'allFriends'));?></li>
                             <li id="notification-menu"><?php echo $this->Html->link('Notifications', array('controller' => 'notifications','action' => 'index',$authUser['id']));?></li>
@@ -78,7 +77,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                       </ul>
 
                      <ul class="nav navbar-nav" id="menu-login">
-                        <?php if ($authUser!==false):?>
+                        <?php if (isset($authUser)):?>
                             <li><?php echo $this->Html->link('Hello, '.$authUser['username'],  array('controller' => 'movies','action' => 'index'));?></li>
                             <li><?php echo $this->Html->link('Logout', array('controller' => 'users','action' => 'logout'));?></li>
                             

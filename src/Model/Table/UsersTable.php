@@ -89,4 +89,49 @@ class UsersTable extends Table
         $rules->add($rules->isUnique(['email']));
         return $rules;
     }
+
+    public function findFriends(Query $query, array $options)
+    {
+        $userId = $options['user_id'];
+        $query = $this->find()
+            ->contain(['Friends'])
+            ->matching('Friends', function ($q) use ( $userId) {
+                 return $q->where(['Friends.friend_id' => $userId]);
+                });
+
+        return $query;
+    }
+
+    public function findPeopleMayKnow(Query $query, array $options)
+    {
+        $userId = $options['user_id'];
+        $query = $this->find()
+            ->distinct(['Users.id'])
+            ->contain(['Friends'])
+            ->matching('Friends', function ($q) use ( $userId) {
+                 return $q->where(['Friends.friend_id !=' => $userId,'Friends.user_id !=' => $userId ]);
+
+                });
+
+        return $query;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

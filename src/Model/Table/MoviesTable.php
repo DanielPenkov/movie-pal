@@ -21,6 +21,10 @@ class MoviesTable extends Table
         $this->hasMany('Recommendations', [
             'foreignKey' => 'movie_id'
         ]);
+        $this->hasMany('UsersMovies', [
+            'foreignKey' => 'movie_id'
+        ]);
+
         $this->belongsToMany('Actors', [
             'foreignKey' => 'movie_id',
             'targetForeignKey' => 'actor_id',
@@ -88,24 +92,116 @@ class MoviesTable extends Table
         return $validator;
     }
 
-       public function findIndexMovies(Query $query)
-       {
+    public function findIndexMovies(Query $query)
+    {
         $query
-        ->where(['Movies.type' =>'movie','Movies.poster !=' =>'N/A', 
-            'Movies.year !=' =>'N/A','Movies.description !=' =>'N/A' ])
-        ->order (['Movies.year' => 'DESC', 'Movies.rating' => 'DESC'])
-        ->contain(['Genres']);
+            ->where(['Movies.type' =>'movie','Movies.poster !=' =>'N/A', 
+                'Movies.year !=' =>'N/A','Movies.description !=' =>'N/A' ])
+            ->order (['Movies.year' => 'DESC', 'Movies.rating' => 'DESC'])
+            ->contain(['Genres']);
         return $query;
     }
 
-    public function findMoviesByTitle(Query $query, array $options)
+    public function findMovieTitles(Query $query, array $options)
     {
         $fields = ['Movies.title'];
-
         return $query
             ->select($fields)
             ->distinct($fields)
-             ->where(['Movies.title LIKE' => '%'.$options['title'].'%']);
+            ->where(['Movies.title LIKE' => '%'.$options['title'].'%']);
     }
-    
+
+     public function findMoviesByTitle(Query $query, array $options)
+     {
+        $query
+            ->where(['Movies.type' =>'movie','Movies.poster !=' =>'N/A', 
+                'Movies.year !=' =>'N/A','Movies.description !=' =>'N/A' ,'Movies.title LIKE' => '%'.$options['title'].'%'])
+            ->order (['Movies.year' => 'DESC', 'Movies.rating' => 'DESC'])
+            ->contain(['Genres']);
+
+        return $query;
+    }
+
+    public function findMoviesByGenre(Query $query, array $options)
+    {
+        $genreId = $options['genre'];
+        $query = $this->find()
+            ->where(['Movies.type' =>'movie','Movies.poster !=' =>'N/A', 
+                'Movies.year !=' =>'N/A','Movies.description !=' =>'N/A' ])
+            ->order (['Movies.year' => 'DESC', 'Movies.rating' => 'DESC'])
+            ->contain(['Genres'])
+            ->matching('Genres', function ($q) use ( $genreId) {
+                 return $q->where(['Genres.id' => $genreId]);
+                });
+
+        return $query;
+    }
+
+    public function findMoviesByGenreAndTitle(Query $query, array $options)
+    {     
+        $genreId = $options['genre'];
+        $title = $options['title'];
+   
+        $query = $this->find()
+            ->where(['Movies.title LIKE' => '%'.$title.'%', 'Movies.type' =>'movie','Movies.poster !=' =>'N/A', 
+                'Movies.year !=' =>'N/A','Movies.description !=' =>'N/A' ])
+            ->order (['Movies.year' => 'DESC', 'Movies.rating' => 'DESC'])
+            ->contain(['Genres'])
+            ->matching('Genres', function ($q) use ( $genreId) {
+                 return $q->where(['Genres.id' => $genreId]);
+                });
+
+        return $query;
+    }
+
+
+
+    public function findRecommendedMovies(Query $query, array $options)
+    {
+        $userId = $options['user_id'];
+        $query = $this->find()
+            ->where(['Movies.type' =>'movie','Movies.poster !=' =>'N/A', 
+                'Movies.year !=' =>'N/A','Movies.description !=' =>'N/A' ])
+            ->order (['Movies.year' => 'DESC', 'Movies.rating' => 'DESC'])
+            ->contain(['Recommendations','Genres'])
+            ->matching('Recommendations', function ($q) use ( $userId) {
+                 return $q->where(['Recommendations.reciever_id' => $userId]);
+                });
+
+        return $query;
+    }
+
+    public function findWatchedMovies(Query $query, array $options)
+    {
+        $userId = $options['user_id'];
+        $query = $this->find()
+            ->where(['Movies.type' =>'movie','Movies.poster !=' =>'N/A', 
+                'Movies.year !=' =>'N/A','Movies.description !=' =>'N/A' ])
+            ->order (['Movies.year' => 'DESC', 'Movies.rating' => 'DESC'])
+            ->contain(['UsersMovies','Genres'])
+            ->matching('UsersMovies', function ($q) use ( $userId) {
+                 return $q->where(['UsersMovies.user_id' => $userId, 'UsersMovies.status' => 2 ]);
+                });
+
+        return $query;
+    }
+
+        public function findWatchingMovies(Query $query, array $options)
+    {
+        $userId = $options['user_id'];
+        $query = $this->find()
+            ->where(['Movies.type' =>'movie','Movies.poster !=' =>'N/A', 
+                'Movies.year !=' =>'N/A','Movies.description !=' =>'N/A' ])
+            ->order (['Movies.year' => 'DESC', 'Movies.rating' => 'DESC'])
+            ->contain(['UsersMovies','Genres'])
+            ->matching('UsersMovies', function ($q) use ( $userId) {
+                 return $q->where(['UsersMovies.user_id' => $userId, 'UsersMovies.status' => 1 ]);
+                });
+
+        return $query;
+    }
+
+
+
+
 }

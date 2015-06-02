@@ -43,8 +43,6 @@ function addToWatchedList(movie_id) {
                             function(isConfirm){  if (isConfirm) {   window.location = "/moviepal/users";   } });
 
                 }
-
-        
      }
             
         });
@@ -72,8 +70,6 @@ function addToWatchingList(movie_id) {
 
 function addFriend(user_id) {
 
-    console.log(user_id);
-
       var data = user_id;
 
      $.ajax({
@@ -92,5 +88,96 @@ function addFriend(user_id) {
 
             }
         });
+
+}
+
+function view(movie_id) {
+
+    var data = movie_id;
+
+    $.ajax({
+        contentType: "application/json; charset=utf-8",
+        dataType: "html",
+        type: "GET",
+        url: '/movie-pal/movies/viewDetails/'+movie_id,
+        data: JSON.stringify({movie_id: data}),
+        success: function (data)
+        {
+            $(".modal-content").html(data);
+        }       
+    });
+
+}
+
+
+function get_recommended(user_id) {
+
+    var data = user_id;
+
+    $.ajax({
+        contentType: "application/json; charset=utf-8",
+        dataType: "html",
+        type: "GET",
+        url: '/movie-pal/movies/getRecommendedMovies/'+user_id,
+        data: JSON.stringify({user_id: data}),
+        success: function (data)
+        {
+            $("#profile-content").html(data);
+        }       
+    });
+
+}
+
+function get_watched(user_id) {
+
+    var data = user_id;
+
+    $.ajax({
+        contentType: "application/json; charset=utf-8",
+        dataType: "html",
+        type: "GET",
+        url: '/movie-pal/movies/getWatchedMovies/'+user_id,
+        data: JSON.stringify({user_id: data}),
+        success: function (data)
+        {
+            $("#profile-content").html(data);
+        }       
+    });
+
+}
+
+function get_watching(user_id) {
+
+    var data = user_id;
+
+    $.ajax({
+        contentType: "application/json; charset=utf-8",
+        dataType: "html",
+        type: "GET",
+        url: '/movie-pal/movies/getWatchingMovies/'+user_id,
+        data: JSON.stringify({user_id: data}),
+        success: function (data)
+        {
+            $("#profile-content").html(data);
+        }       
+    });
+
+}
+
+function get_friends(user_id) {
+
+    var data = user_id;
+
+    $.ajax({
+        contentType: "application/json; charset=utf-8",
+        dataType: "html",
+        type: "GET",
+        url: '/movie-pal/users/getFriends/'+user_id,
+        data: JSON.stringify({user_id: data}),
+        success: function (data)
+        {
+            $("#profile-content").html(data);
+        }       
+    });
 
 }

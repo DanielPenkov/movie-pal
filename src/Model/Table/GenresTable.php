@@ -22,7 +22,7 @@ class GenresTable extends Table
     public function initialize(array $config)
     {
         $this->table('genres');
-        $this->displayField('id');
+        $this->displayField('genre');
         $this->primaryKey('id');
         $this->belongsToMany('Movies', [
             'foreignKey' => 'genre_id',
@@ -51,8 +51,16 @@ class GenresTable extends Table
     }
     
 
-    public function findGenresList(Query $query, array $options)
+    public function findAllGenres(Query $query)
     {
-       
+        $fields = ['Genres.genre'];
+        $allGenres = array();
+
+        $query = $this->find('list')
+            ->select($fields)
+            ->where(['Genres.genre !=' =>'N/A'])
+            -> distinct($fields);
+            
+        return $query;
     }
 }

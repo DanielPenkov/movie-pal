@@ -48,7 +48,7 @@
  <target name="lint"
          unless="lint.done"
          description="Perform syntax check of sourcecode files">
-  <apply executable="php" failonerror="true" taskname="lint">
+  <apply executable="php" failonerror="false" taskname="lint">
    <arg value="-l" />
 
    <fileset dir="${basedir}/src">

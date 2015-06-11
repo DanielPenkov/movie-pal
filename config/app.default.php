@@ -9,7 +9,7 @@ return [
      * Development Mode:
      * true: Errors and warnings shown.
      */
-    'debug' => false,
+    'debug' => true,
 
     /**
      * Configure basic information about the application.
@@ -221,7 +221,7 @@ return [
             //'port' => 'nonstandard_port_number',
             'username' => 'root',
             'password' => '',
-            'database' => 'import_test',
+            'database' => 'movies',
             'encoding' => 'utf8',
             'timezone' => 'UTC',
             'cacheMetadata' => true,
@@ -255,9 +255,9 @@ return [
             'persistent' => false,
             'host' => 'localhost',
             //'port' => 'nonstandard_port_number',
-            'username' => 'my_app',
-            'password' => 'secret',
-            'database' => 'test_myapp',
+            'username' => 'root',
+            'password' => '',
+            'database' => 'test_movies',
             'encoding' => 'utf8',
             'timezone' => 'UTC',
             'cacheMetadata' => true,

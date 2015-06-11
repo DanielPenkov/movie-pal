@@ -202,66 +202,6 @@ class MoviesTable extends Table
         return $query;
     }
 
-public function addToWatchingList($movie_id, $user_id)
-{
-
-
-
-$UsersMovies = TableRegistry::get('UsersMovies');
-
-
-        $data = array(
-            'UsersMovies' =>array(
-                'user_id' =>$user_id,
-                'movie_id'=>$movie_id,
-                'status' => 1
-            )
-        );
-
-        if($this->isInList($movie_id, $user_id) == false){
-
-            $this->UsersMovies->save($data);
-           
-                
-        }
-
-          
-  
-    }
-
-        public function addToWatchedList($movie_id, $user_id)
-        {
-
-        $data = array(
-            'UsersMovies' =>array(
-                'user_id' =>$user_id,
-                'movie_id'=>$movie_id,
-                'status' => 2
-            )
-        );
-
-        if($this->isInList($movie_id, $user_id) == false){
-
-            $this->UsersMovies->save($data);
-  
-                
-        }else{
-
-           $this->UsersMovies->updateAll(array('status' => '2'),array('user_id'=>$user_id,'movie_id' => $movie_id));
-
-        } 
-
-
-
-    }
-
-     public function isInList($movie_id, $user_id)
-     {
-
-        $response=false;
-        return $response;
-    }
-
 
 
 }

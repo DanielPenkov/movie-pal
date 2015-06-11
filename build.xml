@@ -70,8 +70,23 @@
          description="Measure project size using PHPLOC and print human readable output. Intended for usage on the command line.">
   <exec executable="${toolsdir}phploc" taskname="phploc">
    <arg value="--count-tests" />
+    <arg value="--exclude"/>
+	  <arg value="bin"/>
+	  <arg value="--exclude"/>
+	  <arg value="config"/>
+	  <arg value="--exclude"/>
+	  <arg value="logs"/>
+	  <arg value="--exclude"/>
+	  <arg value="node_modules"/>
+	  <arg value="--exclude"/>
+	  <arg value="plugins"/>
+	  <arg value="--exclude"/>
+	  <arg value="tmp"/>
+	  <arg value="--exclude"/>
+	  <arg value="webroot"/>
+	 <arg value="--exclude"/>
+	  <arg value="vendor"/>
    <arg path="${basedir}/src" />
-   <arg path="${basedir}/tests/TestCase" />
   </exec>
 
   <property name="phploc.done" value="true"/>
@@ -88,8 +103,23 @@
    <arg path="${basedir}/build/logs/phploc.csv" />
    <arg value="--log-xml" />
    <arg path="${basedir}/build/logs/phploc.xml" />
+       <arg value="--exclude"/>
+	  <arg value="bin"/>
+	  <arg value="--exclude"/>
+	  <arg value="config"/>
+	  <arg value="--exclude"/>
+	  <arg value="logs"/>
+	  <arg value="--exclude"/>
+	  <arg value="node_modules"/>
+	  <arg value="--exclude"/>
+	  <arg value="plugins"/>
+	  <arg value="--exclude"/>
+	  <arg value="tmp"/>
+	  <arg value="--exclude"/>
+	  <arg value="webroot"/>
+	 <arg value="--exclude"/>
+	  <arg value="vendor"/>
    <arg path="${basedir}/src" />
-   <arg path="${basedir}/tests" />
   </exec>
 
   <property name="phploc.done" value="true"/>
@@ -146,7 +176,7 @@
   <exec executable="${toolsdir}phpcs" taskname="phpcs">
    <arg value="--standard=PSR2" />
    <arg value="--extensions=php" />
-   <arg value="--ignore=autoload.php" />
+   <arg value="--ignore=autoload.php,bin,config,logs,node_modules,plugins,tmp,vendor,webroot"/>
    <arg path="${basedir}/src" />
    <arg path="${basedir}/tests" />
   </exec>
@@ -165,7 +195,7 @@
    <arg value="--report-file=${basedir}/build/logs/checkstyle.xml" />
    <arg value="--standard=PHPCS" />
    <arg value="--extensions=php" />
-   <arg value="--ignore=autoload.php" />
+    <arg value="--ignore=autoload.php,bin,config,logs,node_modules,plugins,tmp,vendor,webroot"/>
    <arg path="${basedir}/src" />
   </exec>
 

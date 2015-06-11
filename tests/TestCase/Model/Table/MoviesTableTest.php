@@ -1,79 +1,32 @@
 <?php
+
+
 namespace App\Test\TestCase\Model\Table;
 
 use App\Model\Table\MoviesTable;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 
-/**
- * App\Model\Table\MoviesTable Test Case
- */
 class MoviesTableTest extends TestCase
 {
+    public $fixtures = ['app.movies'];
 
-    /**
-     * Fixtures
-     *
-     * @var array
-     */
-    public $fixtures = [
-        'app.movies',
-        'app.recommendations',
-        'app.actors',
-        'app.actors_movies',
-        'app.countries',
-        'app.countries_movies',
-        'app.directors',
-        'app.directors_movies',
-        'app.genres',
-        'app.genres_movies',
-        'app.users',
-        'app.users_movies',
-        'app.writers',
-        'app.writers_movies'
-    ];
-
-    /**
-     * setUp method
-     *
-     * @return void
-     */
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('Movies') ? [] : ['className' => 'App\Model\Table\MoviesTable'];
-        $this->Movies = TableRegistry::get('Movies', $config);
+        $this->Movies = TableRegistry::get('Movies');
     }
 
-    /**
-     * tearDown method
-     *
-     * @return void
-     */
-    public function tearDown()
+    public function testFindMoviesByGenre()
     {
-        unset($this->Movies);
+        $query = $this->Movies->find('moviesByGenre');
+        $this->assertInstanceOf('Cake\ORM\Query', $query);
+        $result = $query->hydrate(false)->toArray();
+        $expected = [
+            ['id' => 3, 'title' => 'Third Article']
+        ];
 
-        parent::tearDown();
+        $this->assertEquals($expected, $result);
     }
 
-    /**
-     * Test initialize method
-     *
-     * @return void
-     */
-    public function testInitialize()
-    {
-        $this->markTestIncomplete('Not implemented yet.');
-    }
-
-    /**
-     * Test validationDefault method
-     *
-     * @return void
-     */
-    public function testValidationDefault()
-    {
-        $this->markTestIncomplete('Not implemented yet.');
-    }
 }

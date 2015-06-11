@@ -7,7 +7,7 @@
  * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @copyright Copyright (c) 2014 Cake Software Foundation, Inc. (http://cakefoundation.org)
  * @link      http://cakephp.org CakePHP(tm) Project
  * @since     0.2.9
  * @license   http://www.opensource.org/licenses/mit-license.php MIT License
@@ -15,6 +15,7 @@
 namespace App\Controller;
 
 use Cake\Controller\Controller;
+use \Crud\Controller\ControllerTrait;
 
 
 /**
@@ -29,7 +30,7 @@ class AppController extends Controller
 {
 
 
-use \Crud\Controller\ControllerTrait;
+
 
     public $components = [
         'RequestHandler',
@@ -75,6 +76,7 @@ use \Crud\Controller\ControllerTrait;
                 'action' => 'login'
             ]
         ]);
+        
 
         $authUser = false;
         if($this->Auth->user())

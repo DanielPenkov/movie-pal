@@ -69,6 +69,7 @@ class GenresController extends AppController
      */
     public function edit($id = null)
     {
+     
         $genre = $this->Genres->get($id, [
             'contain' => ['Movies']
         ]);

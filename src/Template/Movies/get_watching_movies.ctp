@@ -38,6 +38,16 @@
 
 
   </div>
+    <div class="small-buttons">
+
+       <a onclick="addToWatchedList(<?php echo $movie['movies']['id']; ?>)" href="javascript:void(0);" class="btn btn-default" >Watched</a>
+
+          <?php echo $this->Html->link( 'Delete' , array('controller' => 'movies','action' => 'deleteUserMovie',$movie['movies']['id'] ), array('escape' => false,'confirm' => 'Add movie to Watching List?','class' => 'btn btn-default')); ?>
+        
+         
+          <a onclick="PopupCenterDual('/moviepal/recommendations/index/<?php echo $movie['movies']['id']?>','MoviePal','450','450');" href="javascript:void(0);" class="btn btn-default">Recommend</a></p>
+
+    </div>
 
         </div>
 

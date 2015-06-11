@@ -42,7 +42,7 @@
 
         <p> 
 
-      <a onclick="addToWatchedList(<?php echo $movie->id ?>)" "href="javascript:void(0);" class="btn btn-default" >Watched</a>
+      <a onclick="addToWatchedList(<?php echo $movie->id ?>)" href="javascript:void(0);" class="btn btn-default" >Watched</a>
 
       <a onclick="addToWatchingList(<?php echo $movie->id; ?>)" "href="javascript:void(0);" class="btn btn-default" >To Watch</a>
 

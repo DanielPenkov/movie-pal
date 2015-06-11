@@ -20,29 +20,19 @@ function PopupCenterDual(url, title, w, h) {
 
 function addToWatchedList(movie_id) {
 
+
       var data = movie_id;
    
      $.ajax({
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             type: "POST",
-            url: '/moviepal/movies/addMovieWatchedList',
+            url: '/movie-pal/movies/addMovieWatchedList',
             data: JSON.stringify({id: data}),
-            success: function (data){
-
-                if(data == 'inserted'){
-
+            success: function (){
+        
                     swal('Movie added to "Watched List"',"", "success");
-                }
-                else{
-
-                        swal({ title: "Are you sure?",text: "",   
-                            type: "info",  showCancelButton: true,   confirmButtonColor: "#DD6B55",  
-                            confirmButtonText: "Yes, move it!",   cancelButtonText: "No, cancel!", 
-                            closeOnConfirm: false,   closeOnCancel: false }, 
-                            function(isConfirm){  if (isConfirm) {   window.location = "/moviepal/users";   } });
-
-                }
+         
      }
             
         });
@@ -58,9 +48,9 @@ function addToWatchingList(movie_id) {
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             type: "POST",
-            url: '/moviepal/movies/addMovieWatchingList',
+            url: '/movie-pal/movies/addMovieWatchingList',
             data: JSON.stringify({id: data}),
-            success: function (data){
+            success: function (){
                 swal('Movie added to "Watching List"',"", "success");
 
             }

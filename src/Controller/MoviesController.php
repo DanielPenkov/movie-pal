@@ -11,6 +11,7 @@ class MoviesController extends AppController
     public function initialize()
     {
         parent::initialize();
+        $this->Auth->allow([ 'index','viewDetails']);
         $this->loadComponent('Paginator');
     }
 
@@ -33,7 +34,7 @@ class MoviesController extends AppController
         if(empty($this->request->query['title']) == false && empty($this->request->query['genre']))
         {
             $this->set('title',$this->request->query['title']);
-            $result =$this->Movies->find('moviesByTitle', ['title' =>  $this->request->query['title']]);
+            $result = $this->Movies->find('moviesByTitle', ['title' =>  $this->request->query['title']]);
         }
 
         if( empty($this->request->query['genre']) == false && empty($this->request->query['title']) )
@@ -59,7 +60,7 @@ class MoviesController extends AppController
         $this->set('_serialize', ['movies']);
     }
 
-        public function viewDetails($id = null)
+    public function viewDetails($id = null)
     {
 
         
@@ -110,7 +111,7 @@ class MoviesController extends AppController
     public function getWatchedMovies($user_id = null)
     {
 
-        
+      
         if ($this->request->is('ajax')) 
         {
             $config = array('limit' => 9);
@@ -139,6 +140,32 @@ class MoviesController extends AppController
         }else{
             $this->autoRender = false;
         }
+    }
+
+
+    public function addMovieWatchedList(){
+
+        $this->autoRender = false;
+
+        $movie_id = json_encode($this->request->data['id']);
+        $user_id = $this->Auth->user('id');
+ 
+        $message = $this->Movies->addToWatchedList($movie_id, $user_id);
+       
+
+    }
+
+    public function addMovieWatchingList(){
+
+        $this->autoRender = false; 
+       
+
+        $movie_id = json_encode($this->request->data['id']);
+        $user_id = 1;
+ 
+        $message = $this->Movies->addToWatchingList($movie_id, $user_id);
+        $this->set('_serialize', 'message');
+      
     }
 
 

@@ -1,13 +1,10 @@
 <?php
+/**comment
+*/
 namespace App\Controller;
-
 use App\Controller\AppController;
 
-/**
- * Notifications Controller
- *
- * @property \App\Model\Table\NotificationsTable $Notifications
- */
+
 class NotificationsController extends AppController
 {
 
@@ -18,6 +15,7 @@ class NotificationsController extends AppController
      */
     public function index()
     {
+        
         $this->paginate = [
             'contain' => ['Users']
         ];
@@ -89,13 +87,7 @@ class NotificationsController extends AppController
         $this->set('_serialize', ['notification']);
     }
 
-    /**
-     * Delete method
-     *
-     * @param string|null $id Notification id.
-     * @return void Redirects to index.
-     * @throws \Cake\Network\Exception\NotFoundException When record not found.
-     */
+ 
     public function delete($id = null)
     {
         $this->request->allowMethod(['post', 'delete']);

@@ -10,13 +10,12 @@ use App\Controller\AppController;
  */
 class FriendsController extends AppController
 {
-
     /**
      * Index method
      *
      * @return void
      */
-    public function index()
+    public function index(
     {
         $this->paginate = [
             'contain' => ['Users', 'Friends']
@@ -40,8 +39,7 @@ class FriendsController extends AppController
         $this->set('friend', $friend);
         $this->set('_serialize', ['friend']);
     }
-
-    /**
+  /**
      * Add method
      *
      * @return void Redirects on successful add, renders view otherwise.
@@ -63,7 +61,9 @@ class FriendsController extends AppController
         $friends = $this->Friends->Friends->find('list', ['limit' => 200]);
         $this->set(compact('friend', 'users', 'friends'));
         $this->set('_serialize', ['friend']);
-    }
+   }
+
+dddddddddddddd
 
     /**
      * Edit method

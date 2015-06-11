@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd-cpd>
+  <duplication lines="22" tokens="77">
+    <file path="C:\xampp\htdocs\movie-pal\src\Controller\ActorsMoviesController.php" line="53"/>
+    <file path="C:\xampp\htdocs\movie-pal\src\Controller\ActorsMoviesController.php" line="80"/>
+    <codefragment>            $actorsMovie = $this-&gt;ActorsMovies-&gt;patchEntity($actorsMovie, $this-&gt;request-&gt;data);&#13;
+            if ($this-&gt;ActorsMovies-&gt;save($actorsMovie)) {&#13;
+                $this-&gt;Flash-&gt;success('The actors movie has been saved.');&#13;
+                return $this-&gt;redirect(['action' =&gt; 'index']);&#13;
+            } else {&#13;
+                $this-&gt;Flash-&gt;error('The actors movie could not be saved. Please, try again.');&#13;
+            }&#13;
+        }&#13;
+        $movies = $this-&gt;ActorsMovies-&gt;Movies-&gt;find('list', ['limit' =&gt; 200]);&#13;
+        $actors = $this-&gt;ActorsMovies-&gt;Actors-&gt;find('list', ['limit' =&gt; 200]);&#13;
+        $this-&gt;set(compact('actorsMovie', 'movies', 'actors'));&#13;
+        $this-&gt;set('_serialize', ['actorsMovie']);&#13;
+    }&#13;
+&#13;
+    /**&#13;
+     * Edit method&#13;
+     *&#13;
+     * @param string|null $id Actors Movie id.&#13;
+     * @return void Redirects on successful edit, renders view otherwise.&#13;
+     * @throws \Cake\Network\Exception\NotFoundException When record not found.&#13;
+     */&#13;
+    public function edit($id = null)&#13;
+</codefragment>
+  </duplication>
+  <duplication lines="22" tokens="77">
+    <file path="C:\xampp\htdocs\movie-pal\src\Controller\CountriesMoviesController.php" line="53"/>
+    <file path="C:\xampp\htdocs\movie-pal\src\Controller\CountriesMoviesController.php" line="80"/>
+    <codefragment>            $countriesMovie = $this-&gt;CountriesMovies-&gt;patchEntity($countriesMovie, $this-&gt;request-&gt;data);&#13;
+            if ($this-&gt;CountriesMovies-&gt;save($countriesMovie)) {&#13;
+                $this-&gt;Flash-&gt;success('The countries movie has been saved.');&#13;
+                return $this-&gt;redirect(['action' =&gt; 'index']);&#13;
+            } else {&#13;
+                $this-&gt;Flash-&gt;error('The countries movie could not be saved. Please, try again.');&#13;
+            }&#13;
+        }&#13;
+        $movies = $this-&gt;CountriesMovies-&gt;Movies-&gt;find('list', ['limit' =&gt; 200]);&#13;
+        $countries = $this-&gt;CountriesMovies-&gt;Countries-&gt;find('list', ['limit' =&gt; 200]);&#13;
+        $this-&gt;set(compact('countriesMovie', 'movies', 'countries'));&#13;
+        $this-&gt;set('_serialize', ['countriesMovie']);&#13;
+    }&#13;
+&#13;
+    /**&#13;
+     * Edit method&#13;
+     *&#13;
+     * @param string|null $id Countries Movie id.&#13;
+     * @return void Redirects on successful edit, renders view otherwise.&#13;
+     * @throws \Cake\Network\Exception\NotFoundException When record not found.&#13;
+     */&#13;
+    public function edit($id = null)&#13;
+</codefragment>
+  </duplication>
+  <duplication lines="22" tokens="77">
+    <file path="C:\xampp\htdocs\movie-pal\src\Controller\DirectorsMoviesController.php" line="53"/>
+    <file path="C:\xampp\htdocs\movie-pal\src\Controller\DirectorsMoviesController.php" line="80"/>
+    <codefragment>            $directorsMovie = $this-&gt;DirectorsMovies-&gt;patchEntity($directorsMovie, $this-&gt;request-&gt;data);&#13;
+            if ($this-&gt;DirectorsMovies-&gt;save($directorsMovie)) {&#13;
+                $this-&gt;Flash-&gt;success('The directors movie has been saved.');&#13;
+                return $this-&gt;redirect(['action' =&gt; 'index']);&#13;
+            } else {&#13;
+                $this-&gt;Flash-&gt;error('The directors movie could not be saved. Please, try again.');&#13;
+            }&#13;
+        }&#13;
+        $movies = $this-&gt;DirectorsMovies-&gt;Movies-&gt;find('list', ['limit' =&gt; 200]);&#13;
+        $directors = $this-&gt;DirectorsMovies-&gt;Directors-&gt;find('list', ['limit' =&gt; 200]);&#13;
+        $this-&gt;set(compact('directorsMovie', 'movies', 'directors'));&#13;
+        $this-&gt;set('_serialize', ['directorsMovie']);&#13;
+    }&#13;
+&#13;
+    /**&#13;
+     * Edit method&#13;
+     *&#13;
+     * @param string|null $id Directors Movie id.&#13;
+     * @return void Redirects on successful edit, renders view otherwise.&#13;
+     * @throws \Cake\Network\Exception\NotFoundException When record not found.&#13;
+     */&#13;
+    public function edit($id = null)&#13;
+</codefragment>
+  </duplication>
+  <duplication lines="12" tokens="75">
+    <file path="C:\xampp\htdocs\movie-pal\src\Controller\FriendsController.php" line="51"/>
+    <file path="C:\xampp\htdocs\movie-pal\src\Controller\FriendsController.php" line="81"/>
+    <codefragment>            $friend = $this-&gt;Friends-&gt;patchEntity($friend, $this-&gt;request-&gt;data);&#13;
+            if ($this-&gt;Friends-&gt;save($friend)) {&#13;
+                $this-&gt;Flash-&gt;success('The friend has been saved.');&#13;
+                return $this-&gt;redirect(['action' =&gt; 'index']);&#13;
+            } else {&#13;
+                $this-&gt;Flash-&gt;error('The friend could not be saved. Please, try again.');&#13;
+            }&#13;
+           &#13;
+        }&#13;
+        $users = $this-&gt;Friends-&gt;Users-&gt;find('list', ['limit' =&gt; 200]);&#13;
+        $friends = $this-&gt;Friends-&gt;Friends-&gt;find('list', ['limit' =&gt; 200]);&#13;
+        $this-&gt;set(compact('friend', 'users', 'friends'));&#13;
+</codefragment>
+  </duplication>
+  <duplication lines="22" tokens="77">
+    <file path="C:\xampp\htdocs\movie-pal\src\Controller\GenresMoviesController.php" line="53"/>
+    <file path="C:\xampp\htdocs\movie-pal\src\Controller\GenresMoviesController.php" line="80"/>
+    <codefragment>            $genresMovie = $this-&gt;GenresMovies-&gt;patchEntity($genresMovie, $this-&gt;request-&gt;data);&#13;
+            if ($this-&gt;GenresMovies-&gt;save($genresMovie)) {&#13;
+                $this-&gt;Flash-&gt;success('The genres movie has been saved.');&#13;
+                return $this-&gt;redirect(['action' =&gt; 'index']);&#13;
+            } else {&#13;
+                $this-&gt;Flash-&gt;error('The genres movie could not be saved. Please, try again.');&#13;
+            }&#13;
+        }&#13;
+        $movies = $this-&gt;GenresMovies-&gt;Movies-&gt;find('list', ['limit' =&gt; 200]);&#13;
+        $genres = $this-&gt;GenresMovies-&gt;Genres-&gt;find('list', ['limit' =&gt; 200]);&#13;
+        $this-&gt;set(compact('genresMovie', 'movies', 'genres'));&#13;
+        $this-&gt;set('_serialize', ['genresMovie']);&#13;
+    }&#13;
+&#13;
+    /**&#13;
+     * Edit method&#13;
+     *&#13;
+     * @param string|null $id Genres Movie id.&#13;
+     * @return void Redirects on successful edit, renders view otherwise.&#13;
+     * @throws \Cake\Network\Exception\NotFoundException When record not found.&#13;
+     */&#13;
+    public function edit($id = null)&#13;
+</codefragment>
+  </duplication>
+  <duplication lines="23" tokens="90">
+    <file path="C:\xampp\htdocs\movie-pal\src\Controller\RecommendationsController.php" line="53"/>
+    <file path="C:\xampp\htdocs\movie-pal\src\Controller\RecommendationsController.php" line="81"/>
+    <codefragment>            $recommendation = $this-&gt;Recommendations-&gt;patchEntity($recommendation, $this-&gt;request-&gt;data);&#13;
+            if ($this-&gt;Recommendations-&gt;save($recommendation)) {&#13;
+                $this-&gt;Flash-&gt;success('The recommendation has been saved.');&#13;
+                return $this-&gt;redirect(['action' =&gt; 'index']);&#13;
+            } else {&#13;
+                $this-&gt;Flash-&gt;error('The recommendation could not be saved. Please, try again.');&#13;
+            }&#13;
+        }&#13;
+        $users = $this-&gt;Recommendations-&gt;Users-&gt;find('list', ['limit' =&gt; 200]);&#13;
+        $movies = $this-&gt;Recommendations-&gt;Movies-&gt;find('list', ['limit' =&gt; 200]);&#13;
+        $notifications = $this-&gt;Recommendations-&gt;Notifications-&gt;find('list', ['limit' =&gt; 200]);&#13;
+        $this-&gt;set(compact('recommendation', 'users', 'movies', 'notifications'));&#13;
+        $this-&gt;set('_serialize', ['recommendation']);&#13;
+    }&#13;
+&#13;
+    /**&#13;
+     * Edit method&#13;
+     *&#13;
+     * @param string|null $id Recommendation id.&#13;
+     * @return void Redirects on successful edit, renders view otherwise.&#13;
+     * @throws \Cake\Network\Exception\NotFoundException When record not found.&#13;
+     */&#13;
+    public function edit($id = null)&#13;
+</codefragment>
+  </duplication>
+  <duplication lines="22" tokens="77">
+    <file path="C:\xampp\htdocs\movie-pal\src\Controller\UsersMoviesController.php" line="53"/>
+    <file path="C:\xampp\htdocs\movie-pal\src\Controller\UsersMoviesController.php" line="80"/>
+    <codefragment>            $usersMovie = $this-&gt;UsersMovies-&gt;patchEntity($usersMovie, $this-&gt;request-&gt;data);&#13;
+            if ($this-&gt;UsersMovies-&gt;save($usersMovie)) {&#13;
+                $this-&gt;Flash-&gt;success('The users movie has been saved.');&#13;
+                return $this-&gt;redirect(['action' =&gt; 'index']);&#13;
+            } else {&#13;
+                $this-&gt;Flash-&gt;error('The users movie could not be saved. Please, try again.');&#13;
+            }&#13;
+        }&#13;
+        $users = $this-&gt;UsersMovies-&gt;Users-&gt;find('list', ['limit' =&gt; 200]);&#13;
+        $movies = $this-&gt;UsersMovies-&gt;Movies-&gt;find('list', ['limit' =&gt; 200]);&#13;
+        $this-&gt;set(compact('usersMovie', 'users', 'movies'));&#13;
+        $this-&gt;set('_serialize', ['usersMovie']);&#13;
+    }&#13;
+&#13;
+    /**&#13;
+     * Edit method&#13;
+     *&#13;
+     * @param string|null $id Users Movie id.&#13;
+     * @return void Redirects on successful edit, renders view otherwise.&#13;
+     * @throws \Cake\Network\Exception\NotFoundException When record not found.&#13;
+     */&#13;
+    public function edit($id = null)&#13;
+</codefragment>
+  </duplication>
+  <duplication lines="22" tokens="77">
+    <file path="C:\xampp\htdocs\movie-pal\src\Controller\WritersMoviesController.php" line="53"/>
+    <file path="C:\xampp\htdocs\movie-pal\src\Controller\WritersMoviesController.php" line="80"/>
+    <codefragment>            $writersMovie = $this-&gt;WritersMovies-&gt;patchEntity($writersMovie, $this-&gt;request-&gt;data);&#13;
+            if ($this-&gt;WritersMovies-&gt;save($writersMovie)) {&#13;
+                $this-&gt;Flash-&gt;success('The writers movie has been saved.');&#13;
+                return $this-&gt;redirect(['action' =&gt; 'index']);&#13;
+            } else {&#13;
+                $this-&gt;Flash-&gt;error('The writers movie could not be saved. Please, try again.');&#13;
+            }&#13;
+        }&#13;
+        $movies = $this-&gt;WritersMovies-&gt;Movies-&gt;find('list', ['limit' =&gt; 200]);&#13;
+        $writers = $this-&gt;WritersMovies-&gt;Writers-&gt;find('list', ['limit' =&gt; 200]);&#13;
+        $this-&gt;set(compact('writersMovie', 'movies', 'writers'));&#13;
+        $this-&gt;set('_serialize', ['writersMovie']);&#13;
+    }&#13;
+&#13;
+    /**&#13;
+     * Edit method&#13;
+     *&#13;
+     * @param string|null $id Writers Movie id.&#13;
+     * @return void Redirects on successful edit, renders view otherwise.&#13;
+     * @throws \Cake\Network\Exception\NotFoundException When record not found.&#13;
+     */&#13;
+    public function edit($id = null)&#13;
+</codefragment>
+  </duplication>
+</pmd-cpd>

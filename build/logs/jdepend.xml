@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PDepend>
+  <Packages>
+    <Package name="App\Console">
+      <Stats>
+        <TotalClasses>1</TotalClasses>
+        <ConcreteClasses>1</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>0</Ca>
+        <Ce>3</Ce>
+        <A>0</A>
+        <I>1</I>
+        <D>0</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Console\Installer.php">Installer</Class>
+      </ConcreteClasses>
+      <AbstractClasses/>
+      <DependsUpon>
+        <Package></Package>
+        <Package>Cake\Codeception\Console</Package>
+        <Package>Composer\Script</Package>
+      </DependsUpon>
+      <UsedBy/>
+    </Package>
+    <Package name="App\Controller">
+      <Stats>
+        <TotalClasses>20</TotalClasses>
+        <ConcreteClasses>20</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>0</Ca>
+        <Ce>6</Ce>
+        <A>0</A>
+        <I>1</I>
+        <D>0</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Controller\ActorsController.php">ActorsController</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Controller\ActorsMoviesController.php">ActorsMoviesController</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Controller\AppController.php">AppController</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Controller\CountriesController.php">CountriesController</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Controller\CountriesMoviesController.php">CountriesMoviesController</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Controller\DirectorsController.php">DirectorsController</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Controller\DirectorsMoviesController.php">DirectorsMoviesController</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Controller\GenresController.php">GenresController</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Controller\GenresMoviesController.php">GenresMoviesController</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Controller\MoviesController.php">MoviesController</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Controller\NotificationTypeController.php">NotificationTypeController</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Controller\NotificationsController.php">NotificationsController</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Controller\PagesController.php">PagesController</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Controller\ProfileController.php">ProfileController</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Controller\RecommendationsController.php">RecommendationsController</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Controller\StatusesController.php">StatusesController</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Controller\UsersController.php">UsersController</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Controller\UsersMoviesController.php">UsersMoviesController</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Controller\WritersController.php">WritersController</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Controller\WritersMoviesController.php">WritersMoviesController</Class>
+      </ConcreteClasses>
+      <AbstractClasses/>
+      <DependsUpon>
+        <Package>Cake\Controller</Package>
+        <Package>Cake\Core</Package>
+        <Package>Cake\Event</Package>
+        <Package>Cake\Network\Exception</Package>
+        <Package>Cake\ORM</Package>
+        <Package>Cake\View\Exception</Package>
+      </DependsUpon>
+      <UsedBy/>
+    </Package>
+    <Package name="App\Model\Behavior">
+      <Stats>
+        <TotalClasses>1</TotalClasses>
+        <ConcreteClasses>1</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>0</Ca>
+        <Ce>1</Ce>
+        <A>0</A>
+        <I>1</I>
+        <D>0</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Model\Behavior\AllBehavior.php">AllBehavior</Class>
+      </ConcreteClasses>
+      <AbstractClasses/>
+      <DependsUpon>
+        <Package>Cake\ORM</Package>
+      </DependsUpon>
+      <UsedBy/>
+    </Package>
+    <Package name="App\Model\Entity">
+      <Stats>
+        <TotalClasses>18</TotalClasses>
+        <ConcreteClasses>18</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>0</Ca>
+        <Ce>2</Ce>
+        <A>0</A>
+        <I>1</I>
+        <D>0</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Model\Entity\Actor.php">Actor</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Model\Entity\ActorsMovie.php">ActorsMovie</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Model\Entity\CountriesMovie.php">CountriesMovie</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Model\Entity\Country.php">Country</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Model\Entity\Director.php">Director</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Model\Entity\DirectorsMovie.php">DirectorsMovie</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Model\Entity\Friend.php">Friend</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Model\Entity\Genre.php">Genre</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Model\Entity\GenresMovie.php">GenresMovie</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Model\Entity\Movie.php">Movie</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Model\Entity\Notification.php">Notification</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Model\Entity\NotificationType.php">NotificationType</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Model\Entity\Recommendation.php">Recommendation</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Model\Entity\Status.php">Status</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Model\Entity\User.php">User</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Model\Entity\UsersMovie.php">UsersMovie</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Model\Entity\Writer.php">Writer</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Model\Entity\WritersMovie.php">WritersMovie</Class>
+      </ConcreteClasses>
+      <AbstractClasses/>
+      <DependsUpon>
+        <Package>Cake\Auth</Package>
+        <Package>Cake\ORM</Package>
+      </DependsUpon>
+      <UsedBy/>
+    </Package>
+    <Package name="App\Model\Table">
+      <Stats>
+        <TotalClasses>18</TotalClasses>
+        <ConcreteClasses>18</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>0</Ca>
+        <Ce>2</Ce>
+        <A>0</A>
+        <I>1</I>
+        <D>0</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Model\Table\ActorsMoviesTable.php">ActorsMoviesTable</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Model\Table\ActorsTable.php">ActorsTable</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Model\Table\CountriesMoviesTable.php">CountriesMoviesTable</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Model\Table\CountriesTable.php">CountriesTable</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Model\Table\DirectorsMoviesTable.php">DirectorsMoviesTable</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Model\Table\DirectorsTable.php">DirectorsTable</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Model\Table\FriendsTable.php">FriendsTable</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Model\Table\GenresMoviesTable.php">GenresMoviesTable</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Model\Table\GenresTable.php">GenresTable</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Model\Table\MoviesTable.php">MoviesTable</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Model\Table\NotificationTypeTable.php">NotificationTypeTable</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Model\Table\NotificationsTable.php">NotificationsTable</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Model\Table\RecommendationsTable.php">RecommendationsTable</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Model\Table\StatusesTable.php">StatusesTable</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Model\Table\UsersMoviesTable.php">UsersMoviesTable</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Model\Table\UsersTable.php">UsersTable</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Model\Table\WritersMoviesTable.php">WritersMoviesTable</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Model\Table\WritersTable.php">WritersTable</Class>
+      </ConcreteClasses>
+      <AbstractClasses/>
+      <DependsUpon>
+        <Package>Cake\ORM</Package>
+        <Package>Cake\Validation</Package>
+      </DependsUpon>
+      <UsedBy/>
+    </Package>
+    <Package name="App\Shell">
+      <Stats>
+        <TotalClasses>1</TotalClasses>
+        <ConcreteClasses>1</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>0</Ca>
+        <Ce>3</Ce>
+        <A>0</A>
+        <I>1</I>
+        <D>0</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Shell\ConsoleShell.php">ConsoleShell</Class>
+      </ConcreteClasses>
+      <AbstractClasses/>
+      <DependsUpon>
+        <Package>Cake\Console</Package>
+        <Package>Cake\Log</Package>
+        <Package>Psy</Package>
+      </DependsUpon>
+      <UsedBy/>
+    </Package>
+    <Package name="App\View">
+      <Stats>
+        <TotalClasses>1</TotalClasses>
+        <ConcreteClasses>1</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>0</Ca>
+        <Ce>1</Ce>
+        <A>0</A>
+        <I>1</I>
+        <D>0</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\View\AppView.php">AppView</Class>
+      </ConcreteClasses>
+      <AbstractClasses/>
+      <DependsUpon>
+        <Package>Cake\View</Package>
+      </DependsUpon>
+      <UsedBy/>
+    </Package>
+  </Packages>
+  <Cycles/>
+</PDepend>

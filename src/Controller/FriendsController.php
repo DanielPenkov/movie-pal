@@ -15,7 +15,7 @@ class FriendsController extends AppController
      *
      * @return void
      */
-    public function index(
+    public function index()
     {
         $this->paginate = [
             'contain' => ['Users', 'Friends']
@@ -62,8 +62,6 @@ class FriendsController extends AppController
         $this->set(compact('friend', 'users', 'friends'));
         $this->set('_serialize', ['friend']);
    }
-
-dddddddddddddd
 
     /**
      * Edit method

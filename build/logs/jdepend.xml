@@ -25,8 +25,8 @@
     </Package>
     <Package name="App\Controller">
       <Stats>
-        <TotalClasses>20</TotalClasses>
-        <ConcreteClasses>20</ConcreteClasses>
+        <TotalClasses>21</TotalClasses>
+        <ConcreteClasses>21</ConcreteClasses>
         <AbstractClasses>0</AbstractClasses>
         <Ca>0</Ca>
         <Ce>6</Ce>
@@ -42,6 +42,7 @@
         <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Controller\CountriesMoviesController.php">CountriesMoviesController</Class>
         <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Controller\DirectorsController.php">DirectorsController</Class>
         <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Controller\DirectorsMoviesController.php">DirectorsMoviesController</Class>
+        <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Controller\FriendsController.php">FriendsController</Class>
         <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Controller\GenresController.php">GenresController</Class>
         <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Controller\GenresMoviesController.php">GenresMoviesController</Class>
         <Class sourceFile="C:\xampp\htdocs\movie-pal\src\Controller\MoviesController.php">MoviesController</Class>

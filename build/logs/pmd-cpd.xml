@@ -81,9 +81,9 @@
     public function edit($id = null)&#13;
 </codefragment>
   </duplication>
-  <duplication lines="12" tokens="75">
+  <duplication lines="22" tokens="77">
     <file path="C:\xampp\htdocs\movie-pal\src\Controller\FriendsController.php" line="51"/>
-    <file path="C:\xampp\htdocs\movie-pal\src\Controller\FriendsController.php" line="81"/>
+    <file path="C:\xampp\htdocs\movie-pal\src\Controller\FriendsController.php" line="79"/>
     <codefragment>            $friend = $this-&gt;Friends-&gt;patchEntity($friend, $this-&gt;request-&gt;data);&#13;
             if ($this-&gt;Friends-&gt;save($friend)) {&#13;
                 $this-&gt;Flash-&gt;success('The friend has been saved.');&#13;
@@ -96,6 +96,16 @@
         $users = $this-&gt;Friends-&gt;Users-&gt;find('list', ['limit' =&gt; 200]);&#13;
         $friends = $this-&gt;Friends-&gt;Friends-&gt;find('list', ['limit' =&gt; 200]);&#13;
         $this-&gt;set(compact('friend', 'users', 'friends'));&#13;
+        $this-&gt;set('_serialize', ['friend']);&#13;
+   }&#13;
+&#13;
+    /**&#13;
+     * Edit method&#13;
+     *&#13;
+     * @param string|null $id Friend id.&#13;
+     * @return void Redirects on successful edit, renders view otherwise.&#13;
+     * @throws \Cake\Network\Exception\NotFoundException When record not found.&#13;
+     */&#13;
 </codefragment>
   </duplication>
   <duplication lines="22" tokens="77">
